@@ -32,9 +32,11 @@ class SaarthiApp:
             None
         """
         record_url = url_for("record", _external=True)
+        if 'https' not in record_url:
+          record_url = record_url.replace('http', 'https')
         call = self.client.calls.create(
             to="+91" + number,
-            from_="+14067177408",
+            from_="+12186702677",
             url=record_url
         )
         print(call.sid)
