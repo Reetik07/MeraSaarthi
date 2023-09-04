@@ -132,6 +132,7 @@ def handle_recording():
         str: The TwiML response based on the transcription and AI-generated response.
     """
     recording_url = request.form["RecordingUrl"]
+    print(recording_url)
     transcription = saarthi_app.transcribe(recording_url)
     if not transcription:
         response = VoiceResponse()
